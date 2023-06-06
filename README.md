@@ -3,13 +3,15 @@
 This is a library that I use to define Nix flakes for Emacs packages. It
 comes with a number of useful checks:
 
-* (ERT)[https://www.gnu.org/software/emacs/manual/html_mono/ert.html].
+* [ERT][ert].
 * `checkdoc` test for all `*.el` files.
-* [`package-lint`](https://github.com/purcell/package-lint) test for all
-  `*.el` files.
+* [`package-lint`][package-lint] test for all `*.el` files.
 
 The main use case is to have an easy and reliable CI setup for my Emacs lisp
 packages.
+
+[ert]: https://www.gnu.org/software/emacs/manual/html_mono/ert.html
+[package-lint]: https://github.com/purcell/package-lint
 
 ## Example of use
 
