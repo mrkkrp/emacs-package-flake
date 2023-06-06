@@ -3,7 +3,7 @@
   mkOutputs =
     { name
     , srcDir
-    , srcRegex ? [ "^.*\.el$" "^test.*\.el$" ]
+    , srcRegex ? [ "^.*\.el$" "^test.*$" ]
     , deps ? [ ]
     , doErt ? false
     , doCheckdoc ? true
