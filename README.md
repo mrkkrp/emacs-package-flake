@@ -13,7 +13,35 @@ packages.
 
 ## Example of use
 
-TODO
+```nix
+# flake.nix
+{
+  inputs = {
+    emacs-package-flake.url = "github:mrkkrp/emacs-package-flake";
+  };
+  outputs = { self, emacs-package-flake }:
+    emacs-package-flake.lib.mkOutputs {
+      name = "my-package";
+      srcDir = ./.;
+    };
+}
+```
+
+Arguments that `mkOutputs` accepts:
+
+* `name` (required)—the name of your package.
+* `srcDir` (required)—the directory where your package is located.
+* `srcRegex` (optional)—a list of regular expressions that match your source
+  files. The default value is `[ "^.*\.el$" "^test.*\.el$" ]`. Ert tests are
+  supposed to be in `test` by default.
+* `deps` (optional)—a list of strings, names of your dependencies.
+* `doErt` (optional)—whether to try to run Ert tests. Defaults to `false`.
+* `doCheckdoc` (optional)—whether to try to run `checkdoc`. Defaults to
+  `true`.
+* `doPackageLint` (optional)—whether to try to run `package-lint`. Defaults
+  to `true`.
+* `doCheck` (optional)—the usual Nix attribute, defaults to `true`. You can
+  pass `false` if you want to disable all checks.
 
 ## License
 
