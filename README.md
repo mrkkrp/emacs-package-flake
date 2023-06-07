@@ -3,6 +3,7 @@
 This is a library that I use to define Nix flakes for Emacs packages. It
 comes with a number of useful checks:
 
+* Clean bytecode compilation.
 * [ERT][ert].
 * `checkdoc` test for all `*.el` files.
 * [`package-lint`][package-lint] test for all `*.el` files.
