@@ -45,6 +45,28 @@ Arguments that `mkOutputs` accepts:
 * `doCheck` (optional)—the usual Nix attribute, defaults to `true`. You can
   pass `false` if you want to disable all checks.
 
+## Use with GitHub actions
+
+```yaml
+# .github/workflows/ci.yaml
+name: CI
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types:
+      - opened
+      - synchronize
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: cachix/install-nix-action@v21
+      - run: nix build
+```
+
 ## License
 
 Copyright © 2023–present Mark Karpov
