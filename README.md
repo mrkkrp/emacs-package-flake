@@ -38,11 +38,10 @@ Arguments that `mkOutputs` accepts:
   files. The default value is `[ "^.*\.el$" "^test.*$" ]`. Ert tests are
   supposed to be in `test` by default.
 * `deps` (optional)—a list of strings, names of your dependencies.
-* `doErt` (optional)—whether to try to run Ert tests. Defaults to `false`.
-* `doCheckdoc` (optional)—whether to try to run `checkdoc`. Defaults to
+* `doErt` (optional)—whether to run Ert tests. Defaults to `false`.
+* `doCheckdoc` (optional)—whether to run `checkdoc`. Defaults to `true`.
+* `doPackageLint` (optional)—whether to run `package-lint`. Defaults to
   `true`.
-* `doPackageLint` (optional)—whether to try to run `package-lint`. Defaults
-  to `true`.
 * `doCheck` (optional)—the usual Nix attribute, defaults to `true`. You can
   pass `false` if you want to disable all checks.
 
